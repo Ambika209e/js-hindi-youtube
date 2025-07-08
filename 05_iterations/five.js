@@ -1,6 +1,6 @@
 // for each loop
 
-const coding = ["js","ruby","java","pyhton","cpp"]
+const coding = ["js","ruby","java","pyhton","cpp"];
 
 // forEach array ki ek property hoti h jise hm . se use kr skte h,
 // forEach function ek callback function leta h
