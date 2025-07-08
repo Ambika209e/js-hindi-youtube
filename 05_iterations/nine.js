@@ -9,7 +9,7 @@ const myNum = [1,2,3]
 
 // by arrow function
 const mySum = myNum.reduce((accumulator,currentValue)=>accumulator+currentValue,0)
-console.log(mySum)
+console.log(mySum);
 
 const shoppingCart = [
     {
