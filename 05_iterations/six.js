@@ -24,7 +24,7 @@ console.log(newNums);
 const myNum = myNums.filter( (num)=> {
      return num>4// if we use scope({}) we have to use the return keyword here
 })
-console.log(myNum)
+console.log(myNum);
 
 
 // if we want same using forEach 
