@@ -1,4 +1,5 @@
 // it is a global scope
+// var global scope hota h islie hm use use nhi krte
 let a = 100;
 {
     //it is a block scope
