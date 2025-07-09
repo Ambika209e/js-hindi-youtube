@@ -1,0 +1,48 @@
+<!-- edit and remove elements in DOM -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai or code</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    // in this function we have to traverse all the element thats why it not efficient
+    function addLanguage(langName){
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`;
+        document.querySelector('.language').appendChild(li);
+    }
+    addLanguage("python");
+    addLanguage("java");
+
+    // another way - optimize - here we directly create a text node
+    function addOptiLanguage(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage("typescript");
+
+    //edit -> if i want to edit values
+    const secondLang = document.querySelector("li:nth-child(2)");
+    // secondLang.innerHTML = "Go";
+    const newli = document.createElement('li')
+    newli.textContent = "Go";
+    secondLang.replaceWith(newli)
+
+
+    //edit
+    const firstLang = document.querySelector("li:first-child");
+    firstLang.outerHTML = '<li>C++</li>'
+
+    //remove
+    const lastLang = document.querySelector("li:last-child");
+    lastLang.remove();
+</script>
+</html>
