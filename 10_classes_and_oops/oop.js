@@ -51,11 +51,12 @@ console.log(userOne);
 console.log(userTwo);
 //constructor function hr baar ek nya instance deta h
 
-
-// new => jese hi hm new keyword use krenge to sbse phle ek empty object create 
-// hota h, jise instance bola jata h
-//1.empty object create hota h
-//2.constructor function call hota h new keyword ke kaaran,ye sare arguments ko pack krta h
-// or hme de deta h
-//3.this keyword me sare arguments inject ho jate h
-//4.then hme function k ander mil jate h
+/*
+new => jese hi hm new keyword use krenge to sbse phle ek empty object create 
+hota h, jise instance bola jata h
+1.empty object create hota h
+2.constructor function call hota h new keyword ke kaaran,ye sare arguments ko pack krta h
+or hme de deta h
+3.this keyword me sare arguments inject ho jate h
+4.then hme function k ander mil jate h
+*/
