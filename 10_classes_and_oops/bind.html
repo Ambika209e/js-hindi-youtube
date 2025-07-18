@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    class React {
+        constructor(){
+            this.library = "React",
+            this.server = "https://localhost:300"
+
+            //requirement -> button ka reference mil jaye or click krne pr kuch ho jaye
+             document
+             .querySelector('button')
+             .addEventListener('click',this.handleClick.bind(this))
+        }
+        handleClick(){
+            console.log("button clicked");
+            console.log(this.server);// yha server ki value undefined aa rhi h 
+            /* but ydi hm sirf this ko print krwaye to hmare pass this ka 
+            reference h it prints <button> Button Clicked </button> to yha button ka 
+            reference to h to esi situation k liye hmare pass hota h bind
+            hme is baar manually/ forcefully bind ka refrence nhi dena h us bind ko
+            actual me bind krna h
+            */
+        }
+    }
+
+    const app = new React()
+</script>
+</html>
