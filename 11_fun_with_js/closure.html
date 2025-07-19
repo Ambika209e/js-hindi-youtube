@@ -1,0 +1,100 @@
+<!--Closure and lexical scoping -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure aur Chai</title>
+</head>
+<body style="background-color: #313131;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+    // ydi hm function k andr function declare krte h to outer function k 
+    // sare varibale access kr skte h -> ise hi lexical scoping khte h
+    // function init() {
+    //     let name = "Mozilla"; 
+    //     function displayName() {
+    //         console.log(name); 
+    //     }
+    //     displayName();
+    // }
+    // init();
+
+    // inner function k pass outer function k scope ka access hota h
+    // function outer(){
+    //     let username = "hitesh"
+    //     console.log("OUTER", secret);// it cant access this property of inner function
+    //     function inner(){
+    //         let secret = "my123"
+    //         console.log("inner", username);
+    //     }
+    //     function innerTwo(){
+    //         console.log("innerTwo", username);
+    //         console.log(secret);// it cant access the property of another function
+    //     }
+    //     inner()
+    //     innerTwo()
+
+    // }
+    // outer()
+    // console.log("TOO OUTER", username);
+
+
+    // -----closure-----
+
+
+    // yha hmne sirf function ka reference return kiya but makefunc pura execute hone k bad
+    // uska pura scope hi ht jata h to ab kese chalehi lexical scoping kyuki jb outer function tha tbhi to inner function ko sb mil rha tha pr outer function hi gayab ho gya
+    // to kese hoga yha ek concept aata h "closure" although function ka execution context
+    // hta diya h lekin yha memory ka role aa jata h to jese hi hmne myfunc ko execute
+    // kiya to sirf displayName nhi jaaega uska outer function agr exist krta h to uska 
+    // bhi pura scope jaega to yha puri memory share hoti h na ki sirf function ka 
+    // executional context
+    // to clousure ka mtlb h ki jb hm pura ka pura ek function hi return kr dete 
+    // to sirf function hi return nhi hota uska pura ek scope return hota h pura lexical
+    // scope return hota h
+    
+    // function makeFunc() {
+    //     const name = "Mozilla";
+    //     function displayName() {
+    //         console.log(name);
+    //     }
+    //     return displayName;
+    // }
+
+    // const myFunc = makeFunc();
+    // myFunc();
+
+</script>
+<script>
+    //  document.getElementById("orange").onclick = function(){
+    //         document.body.style.backgroundColor = `orange`
+    //     }
+    //     document.getElementById("green").onclick = function(){
+    //         document.body.style.backgroundColor = `green`
+    //     }
+
+        // you have a task ki me apko 500 buttons dene wala hu
+        // un buttons ki array ki list bhi dunga ek array k andar unhe yha lga do 
+        // to yha hme 500 bar copy krna hoga above code ko
+        // to hm click handler bna lete h
+
+
+        //-------- real world example of closure--------
+        function clickHandler(color){
+            // document.body.style.backgroundColor = `${color}`
+
+           return function(){
+            document.body.style.backgroundColor = `${color}`
+           }
+        
+        }
+
+        document.getElementById('orange').onclick = clickHandler("orange")
+        document.getElementById('green').onclick = clickHandler("green")
+
+</script>
+</html>
